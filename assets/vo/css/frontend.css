@@ -1,0 +1,107 @@
+/* CSS Document */
+
+
+	.index_hot{border:5px solid #fff5dd;overflow:hidden;position:relative;margin-top:10px}.index_hot .title{position:absolute;top:0;padding:0 10px;z-index:10;font-size:22px;color:#434343;line-height:34px;text-align:center;background:rgba(255,253,249,0.7)}.index_hot:hover .title{display:none}.index_hot .info{position:absolute;top:0;left:0;height:100%;width:100%;z-index:10;background:rgba(255,254,251,0.9);padding:13px 13px 0;color:#555;display:none}.index_hot:hover .info{display:block}.index_hot:hover{border:5px solid #ffe7ac}.footer{margin:20px 0 10px}
+	.index_h1 { font-weight:bold; color:#DD6B00; }
+	.service_box {  border-radius:50px; background-color:#f1f1f1; color:#222222; text-align:center; padding-top: 45px; padding-bottom:45px; cursor:pointer; margin-bottom:10px;}
+	.service_box:hover { background-color:#CCC;}
+	.service_item {  font-size:3.6em;}
+	.pricing__item { -webkit-box-shadow: 10px 10px 25px 0px rgba(34,34,34,0.27);
+-moz-box-shadow: 10px 10px 25px 0px rgba(34,34,34,0.27);
+box-shadow: 10px 10px 25px 0px rgba(34,34,34,0.27); }
+.pricing-item-header__title { line-height: 200%;}
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+//login
+.password-strength--weak
+{
+	color: #b23f42;
+}
+.password-strength--good
+{
+	color: #ffb400;
+}
+.password-strength--strong
+{
+	color: #3fb34f;
+}
+.password-strength
+{
+	padding-top: 5px;
+	text-align: left;
+}
+.col-lg-4.col-center
+{
+	min-width: 310px;
+}
+#forgot_password_container a.cancel
+{
+	display: none;
+}
+#forgot_password_container.xhr a.cancel
+{
+	display: inline;
+}
+@media (max-width: 767px)
+{
+	.page-container-auth
+	{
+		margin: 0;
+		overflow-x: hidden;
+		padding: 0;
+	}
+	.page-container-auth .panel
+	{
+		border: none;
+	}
+}
+
+page-container,.page-container-responsive
+{
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 12.5px;
+	padding-right: 12.5px;
+}
+.page-container:before,.page-container-responsive:before,.page-container:after,.page-container-responsive:after
+{
+	content: " ";
+	display: table;
+}
+.page-container:after,.page-container-responsive:after
+{
+	clear: both;
+}
+@media (min-width: 768px)
+{
+	.page-container,.page-container-responsive
+	{
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+}
+.page-container
+{
+	width: 1045px;
+}
+.page-container-responsive
+{
+	width: auto;
+}
+@media (min-width: 768px)
+{
+	.page-container-responsive
+	{
+		width: 745px;
+	}
+}
+@media (min-width: 1100px)
+{
+	.page-container-responsive
+	{
+		width: 1045px;
+	}
+}

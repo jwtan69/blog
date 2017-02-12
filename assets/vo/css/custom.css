@@ -1,0 +1,52 @@
+/*------------------------------------------------------------------
+
+[Custom Stylesheet]
+
+
+Last change:	03/25/2013
+Assigned to:	You
+
+-------------------------------------------------------------------*/
+
+.event-album-pic {
+    width:157px;  
+    height:157px;
+    position: relative;
+}
+
+.event-album-pic img {
+    max-width:155px;   /* FF IE7 */
+    max-height:155px; /* FF IE7 */
+    _width:expression(this.width > 155 && this.width > this.height ? 155: auto); /* IE6 */
+    _height:expression(this.height > 155 ? 155 : auto); /* IE6 */ 
+    vertical-align: middle;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.truncated { display:inline-block; max-width:120px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+
+.input-group-xs>.form-control,
+.input-group-xs>.input-group-addon,
+.input-group-xs>.input-group-btn>.btn {
+    height: 25px;
+    padding: 3px 6px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.red {
+    color:#ff0000;
+}
+
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}

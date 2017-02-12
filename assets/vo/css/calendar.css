@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+
+#cal_sources > .list-group-item{
+	font-weight: bold;	
+}
+#cal_sources > .source{
+	color: #fff;
+	text-shadow: 1px 1px #8D8D8D;
+}
+
+.checked{
+	position: relative;
+	font-family: 'Glyphicons Halflings';
+	-webkit-font-smoothing: antialiased;
+}
+
+.checked::after {
+	content: " \e013";
+	float:right;
+	clear:both;
+}
