@@ -35,14 +35,9 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 
-		$this->data['article'] = $this->Article_model->getOne(array(
-			'article_id' => 3,
-		));
-
-
-		//print_r($this->data['article']);exit;
-
-		$this->load->view('frontend/test.php',$this->data);
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/index',$this->data);
+		$this->load->view('frontend/footer',$this->data);
 	}
 
 	public function index2()
