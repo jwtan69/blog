@@ -1,6 +1,18 @@
 <!-- banner -->
 <div class="banner">
   <div class="container">
+  
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Blog Test -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3029454727077934"
+     data-ad-slot="8729888805"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
     <h2>Contrary to popular belief, Lorem Ipsum simply</h2>
     <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
     <a href="#">READ ARTICLE</a>
