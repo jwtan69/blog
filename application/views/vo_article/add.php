@@ -33,9 +33,20 @@
                     <fieldset>
                     
                     <!-- Your code here -->
-                    
                     <div class="form-group">
-                      <label for="article_variable" class="col-lg-2">Page Title</label>
+                      <label for="article_variable" class="col-lg-2">文章分類</label>
+                        <div class="col-lg-10">
+                        <select class="form-control" id="category_id" name="category_id">
+                        <?php foreach($categoryList as $k => $v){?>
+                            <option value="<?=$k?>" <?=($mode=='Edit')?($k==$results['category_id']?'selected':''):''?> ><?=$v?></option>
+                        <?php }?>
+                        </select>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                      <label for="article_variable" class="col-lg-2">文章標題</label>
                         <div class="col-lg-10">
                         <input type="text" class="form-control" name="article_variable" id="article_variable" value="<?=($mode=='Edit')?$results['article_variable']:''?>">
 
@@ -43,16 +54,102 @@
                     </div>
 
                     <div class="form-group">
-                      <label for="content_en" class="col-lg-2">Content</label>
+                      <label for="article_variable" class="col-lg-2">作者</label>
                         <div class="col-lg-10">
-                        <textarea class="form-control" name="content_en" id="content_en" style="height:200px;"><?=($mode=='Edit')?$results['content_en']:''?></textarea>
-                        <?php echo $this->ckeditor->replace("content_en"); ?>
+                        <input type="text" class="form-control" name="author" id="author" value="<?=($mode=='Edit')?$results['author']:''?>">
 
                         </div>
                     </div>
 
                     <div class="form-group">
-                      <label for="photo" class="col-lg-2">Photo</label>
+                      <label for="article_variable" class="col-lg-2">主圖</label>
+                        <div class="col-lg-10">
+                        
+                        <div id="" class="well">
+                        <div id="main_img_uploaded">
+                          
+                        <?php 
+                          if($mode=='Edit'){
+                            if($results['main_img'] != ''){
+                        ?>
+                          <div>
+                          <a href="<?=$results['main_img']?>" target="_blank"><img class="img-responsive" width="100px" src="<?=$results['main_img']?>"/></a>
+                          <a class="btn btn-primary" href="javascript:deleteImgOne('main_img');">X</a>
+                          </div>
+
+                        <?php }}?>
+
+                        </div>
+                        <input type="button" name="picUpload" onclick="triggerUpload('main_img', 'main_img_uploaded', 736, 356)" class="btn btn-primary" value="Upload Photo">
+                        <input type="hidden" class="form-control" id="main_img" name="main_img" value="<?=($mode=='Edit')?$results['main_img']:''?>"><span class="label label-danger">recommended resolution: <span id="avatar_size">736*356</span></span>
+                        </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="article_variable" class="col-lg-2">FB圖片</label>
+                        <div class="col-lg-10">
+
+                        <div id="" class="well">
+                        <div id="fb_img_uploaded">
+                          
+                          <?php 
+                          if($mode=='Edit'){
+                            if($results['fb_img'] != ''){
+                        ?>
+                          <div>
+                          <a href="<?=$results['fb_img']?>" target="_blank"><img class="img-responsive" width="100px" src="<?=$results['fb_img']?>"/></a>
+                          <a class="btn btn-primary" href="javascript:deleteImgOne('fb_img');">X</a>
+                          </div>
+
+                        <?php }}?>
+
+
+                        </div>
+                        <input type="button" name="picUpload" onclick="triggerUpload('fb_img', 'fb_img_uploaded', 736, 356)" class="btn btn-primary" value="Upload Photo">
+                        <input type="hidden" class="form-control" id="fb_img" name="fb_img" value="<?=($mode=='Edit')?$results['fb_img']:''?>"><span class="label label-danger">recommended resolution: <span id="avatar_size">736*356</span></span>
+                        </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="article_variable" class="col-lg-2">頁面標題</label>
+                        <div class="col-lg-10">
+                        <input type="text" class="form-control" name="page_title" id="page_title" value="<?=($mode=='Edit')?$results['page_title']:''?>">
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="article_variable" class="col-lg-2">頁面關鍵字</label>
+                        <div class="col-lg-10">
+                        <input type="text" class="form-control" name="page_keyword" id="page_keyword" value="<?=($mode=='Edit')?$results['page_keyword']:''?>">
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="article_variable" class="col-lg-2">頁面簡介</label>
+                        <div class="col-lg-10">
+                        <input type="text" class="form-control" name="page_desc" id="page_desc" value="<?=($mode=='Edit')?$results['page_desc']:''?>">
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="content_en" class="col-lg-2">内容</label>
+                        <div class="col-lg-10">
+                        <textarea class="form-control" name="content_cn" id="content_cn" style="height:200px;"><?=($mode=='Edit')?$results['content_cn']:''?></textarea>
+                        <?php echo $this->ckeditor->replace("content_cn"); ?>
+
+                        </div>
+                    </div>
+
+                    <!--
+                    <div class="form-group">
+                      <label for="photo" class="col-lg-2">照片</label>
                         <div class="col-lg-10">
 
                           <div id="photo_uploaded">
@@ -62,6 +159,8 @@
 
                         </div>
                     </div>
+                    -->
+                    
 
                     
 
@@ -157,6 +256,11 @@ $(document).ready(function(){
   
 
 });
+
+function deleteImgOne($id){
+  $('#'+$id+'_uploaded').html('');
+  $('#'+$id).val('');
+}
 
 
 </script>

@@ -66,7 +66,7 @@
             var tid = id.replace("file", "");
 
             $("#" + picarea).html("");
-                    $("#" + element).val("");
+            $("#" + element).val("");
         }
                 
 

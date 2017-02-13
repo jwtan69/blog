@@ -157,7 +157,7 @@ if($islogin) {
                     <li class="dropdown <?=($this->Function_model->get_current_page())=='banner'?'active':''?>">
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" title="">
                             <i class="glyphicon glyphicon-file"></i>
-                            <span>Pages</span>
+                            <span><?=$init['lang']['Article']?></span>
                             <b class="caret"></b>
                         </a>
 

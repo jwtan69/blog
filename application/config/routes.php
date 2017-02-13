@@ -54,8 +54,10 @@ $route['404_override'] = 'welcome/error';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['^(en|zh|cn)'] = $route['default_controller'];
-$route['^(en|zh|cn)/category'] = 'welcome/category';
-$route['^(en|zh|cn)/details'] = 'welcome/details';
+$route['^(en|zh|cn)/category/(:num)/(:any)'] = 'welcome/category/$2/$3';
+$route['^(en|zh|cn)/category/(:num)/(:any)/(:num)'] = 'welcome/category/$2/$3/$4';
+
+$route['^(en|zh|cn)/details/(:num)'] = 'welcome/details/$2';
 
 $route['^(en|zh|cn)/index2'] = 'welcome/index2';
 $route['^(en|zh|cn)/toto'] = "welcome/toto";

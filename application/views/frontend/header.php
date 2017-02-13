@@ -10,8 +10,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <title>Style Blog a Blogging Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
 <meta name="keywords" content="Style Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="title" content="" /> 
+<meta name="description" content="" /> 
+<meta name="keywords" content="" />
+<meta name="subject" content="" /> 
+<meta name="copyright" content="" /> 
+<meta name="abstract" content="" />
+<meta name="robots" content="All" /> 
+    
+<meta property="og:title" content="" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="" />
+<meta property="og:url" content="" />
+
+<link rel="icon" href="">
+
 <script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="<?=base_url('assets/css/bootstrap.css')?>" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
@@ -60,9 +78,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
           <nav class="link-effect-7" id="link-effect-7">
             <ul class="nav navbar-nav">
-              <li class="active act"><a href="<?=base_url($init['langu'])?>">首頁</a></li>
+              <li <?=!isset($categoryData)?'class="active act"':''?>><a href="<?=base_url($init['langu'])?>">首頁</a></li>
               <?php foreach($category as $v){?>
-              <li><a href="<?=base_url($init['langu'].'/category')?>"><?=$v['title']?></a></li>
+              <li <?=isset($categoryData)?($categoryData['category_article_id']==$v['category_article_id']?'class="active act"':''):''?> ><a href="<?=base_url($init['langu'].'/category/'.$v['category_article_id'].'/'.$v['title'])?>"><?=$v['title']?></a></li>
               <?php }?>
             </ul>
           </nav>

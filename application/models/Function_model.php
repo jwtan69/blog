@@ -271,7 +271,7 @@ class Function_model extends CI_Model{
         $total_page = ceil( $total_item / $item_per_page );
                 $paging = '';
         if($total_item > $item_per_page){
-                    $paging .= '<ul class="pagination pull-right">';
+                    $paging .= '<ul class="pagination pagination-lg">';
 
                     if($page > 1){
                             $paging .= '<li><a href="'.$url.'1">&laquo;</a></li>';

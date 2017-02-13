@@ -20,6 +20,7 @@ class MY_Controller extends CI_Controller {
             $this->load->model('Function_model');
             $this->load->model('User_model');
             $this->load->model('User_login_token_model');
+            $this->load->model('Category_article_model');
 
             $this->data['init'] = $this->Function_model->page_init();
             //This section is all about user logged in information
@@ -55,7 +56,9 @@ class MY_Controller extends CI_Controller {
             CKFinder::SetupCKEditor($this->ckeditor, base_url().'assets/ckfinder/');  
 
    
-            
+            $this->data['categoryList'] = $this->Category_article_model->getOptions(array(
+              'is_deleted' => 0,
+            ),'category_article_id','title');
 
 
       }

@@ -43,16 +43,42 @@ class Welcome extends CI_Controller {
 		$this->load->view('frontend/footer',$this->data);
 	}
 
-	public function category()
+	public function category($id,$slug,$page=1)
 	{
+
+		$this->data['categoryData'] = $this->Category_article_model->getOne(array('Category_article_id'=>$id));
+
+		//article list
+		$this->data['item_per_page'] = 6;
+		$this->data['page'] = $page;
+        $limit_start = ($page-1)*$this->data['item_per_page'];    
+
+        $sql_where = array();
+        $sql_where['category_id'] = $id; 
+        $sql_where['is_deleted'] = 0;            
+
+        $sql_like = array();
+        
+        $this->data["total"] = $this->Article_model->record_count($sql_where, $sql_like);
+        
+        $results = array();
+        $results = $this->Article_model->fetch($this->data['item_per_page'], $limit_start, $sql_where, $sql_like);
+        $this->data["results"] = $results;
+        
+
+        $url = base_url().$this->data['init']['langu'].'/category/'.$this->data['categoryData']['category_article_id'].'/'.$this->data['categoryData']['title'].'/';
+
+        $this->data['paging'] = $this->Function_model->get_paging_fronted($this->data['item_per_page'],10,$this->data['total'],$page,$url);
 
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/category',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 
-	public function details()
+	public function details($id)
 	{
+
+		$this->data['articleData'] = $this->Article_model->getOne(array('Article_id'=>$id));
 
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/details',$this->data);
