@@ -24,11 +24,14 @@ class Welcome extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('Function_model');	
-		$this->load->model('Article_model');	
+		$this->load->model('Article_model');
+		$this->load->model('Category_article_model');		
 
 		$this->data['init'] = $this->Function_model->page_init();
         $this->data['item_per_page'] = $this->Function_model->item_per_page();
         $this->data['webpage'] = $this->Function_model->get_web_setting();
+
+        $this->data['category'] = $this->Category_article_model->get_where(array('is_deleted'=>0));
 	}
 	
 
@@ -37,6 +40,22 @@ class Welcome extends CI_Controller {
 
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/index',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+
+	public function category()
+	{
+
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/category',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+
+	public function details()
+	{
+
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/details',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 

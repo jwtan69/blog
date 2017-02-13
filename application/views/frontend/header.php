@@ -7,121 +7,89 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>543</title>
+<title>Style Blog a Blogging Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<meta name="title" content="" /> 
-<meta name="description" content="" /> 
-<meta name="keywords" content="" />
-<meta name="subject" content="" /> 
-<meta name="abstract" content="" />
-<meta name="copyright" content="" /> 
-<meta name="robots" content="All" />
-    
-<meta property="og:title" content="" />
-<meta property="og:description" content="" />
-<meta property="og:image" content="" />
-<meta property="og:url" content="" />
-
-
+<meta name="keywords" content="Style Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="<?=base_url('assets/css/bootstrap.css')?>" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
-<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css'>
 <link href="<?=base_url('assets/css/style.css')?>" rel='stylesheet' type='text/css' />  
 <script src="<?=base_url('assets/js/jquery-1.11.1.min.js')?>"></script>
 <script src="<?=base_url('assets/js/bootstrap.min.js')?>"></script>
-
+<!-- animation-effect -->
+<link href="<?=base_url('assets/css/animate.min.css')?>" rel="stylesheet"> 
+<script src="<?=base_url('assets/js/wow.min.js')?>"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-91877602-1', 'auto');
-  ga('send', 'pageview');
-
+ new WOW().init();
 </script>
-
+<!-- //animation-effect -->
 </head>
 <body>
-  <!--start-main-->
-           <div class="header">
-            <div class="header-top">
-              <div class="container">
-            <div class="logo">
-              <a href="<?=base_url($init['langu'])?>"><h1>543</h1></a>
-            </div>
+<div class="header" id="ban">
+    <div class="container">
+      <div class="head-left wow fadeInLeft animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+        <div class="header-search">
             <div class="search">
-              <form>
-                <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
-                <input type="submit" value="">
-              </form>
+              <input class="search_box" type="checkbox" id="search_box">
+              <label class="icon-search" for="search_box"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></label>
+              <div class="search_form">
+                <form action="#" method="post">
+                  <input type="text" name="Search" placeholder="Search...">
+                  <input type="submit" value="Send">
+                </form>
+              </div>
             </div>
-            <div class="social">
-              <ul>
-                <!--
-                <li><a href="#" class="facebook"> </a></li>
-                <li><a href="#" class="facebook twitter"> </a></li>
-                <li><a href="#" class="facebook chrome"> </a></li>
-                <li><a href="#" class="facebook in"> </a></li>
-                <li><a href="#" class="facebook beh"> </a></li>
-                <li><a href="#" class="facebook vem"> </a></li>
-                <li><a href="#" class="facebook yout"> </a></li>
-                -->
-              </ul>
-            </div>
-            <div class="clearfix"></div>
-          </div>
         </div>
-      
-<!--head-bottom-->
-<div class="head-bottom">
-      <div class="container">
+      </div>
+      <div class="header_right wow fadeInLeft animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+      <nav class="navbar navbar-default">
+        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="videos.html">Videos</a></li>
-            <li><a href="reviews.html">Reviews</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tech <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="tech.html">Action</a></li>
-         <li><a href="tech.html">Action</a></li>
-          <li><a href="tech.html">Action</a></li>
-              </ul>
-            </li>
-      <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Culture <span class="caret"></span></a>
-             <ul class="dropdown-menu">
-                <li><a href="singlepage.html">Action</a></li>
-         <li><a href="singlepage.html">Action</a></li>
-          <li><a href="singlepage.html">Action</a></li>
-              </ul>
-            </li>
-       <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Science <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="singlepage.html">Action</a></li>
-         <li><a href="singlepage.html">Action</a></li>
-          <li><a href="singlepage.html">Action</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div><!--/.nav-collapse -->
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+          <nav class="link-effect-7" id="link-effect-7">
+            <ul class="nav navbar-nav">
+              <li class="active act"><a href="<?=base_url($init['langu'])?>">首頁</a></li>
+              <?php foreach($category as $v){?>
+              <li><a href="<?=base_url($init['langu'].'/category')?>"><?=$v['title']?></a></li>
+              <?php }?>
+            </ul>
+          </nav>
+        </div>
+        <!-- /.navbar-collapse -->
+      </nav>
       </div>
-    </nav>
-</div>
-<!--head-bottom-->
-</div>  
+      <div class="nav navbar-nav navbar-right social-icons wow fadeInRight animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
+          <ul>
+            <li><a href="#"> </a></li>
+            <!--
+            <li><a href="#" class="pin"> </a></li>
+            <li><a href="#" class="in"> </a></li>
+            <li><a href="#" class="be"> </a></li>
+            <li><a href="#" class="vimeo"> </a></li>
+            -->
+          </ul>
+        </div>
+      <div class="clearfix"> </div> 
+    </div>
+  </div>
+  <!--start-main-->
+  <div class="header-bottom">
+    <div class="container">
+      <div class="logo wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
+        <h1><a href="index.html">STYLE BLOG</a></h1>
+        <p><label class="of"></label>LET'S MAKE A PERFECT STYLE<label class="on"></label></p>
+      </div>
+    </div>
+  </div>
