@@ -46,4 +46,18 @@
 		</div>
 	</div>
 </body>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58a1b9c2c43d4305"></script> 
+
+<script>
+  function toSearch(){
+    event.preventDefault();
+    var search = $("input[type='Search']").val();
+    if(search != '' && search != 'Search'){
+      location.href='<?=base_url($init['langu'].'/search/')?>'+search;
+    }
+
+  }
+</script>
 </html>

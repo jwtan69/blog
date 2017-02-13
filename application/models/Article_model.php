@@ -10,5 +10,15 @@ class Article_model extends MY_Model {
       	return $article['content_'.$lang];
       }
       
+      public function viewCount($id){
+
+      	$this->db->set('view_count', '(view_count+1)', FALSE);
+      	$this->db->where('Article_id', $id);
+		$this->db->update($this->table_name);
+
+		return array();
+
+      }
+
 }
 ?>

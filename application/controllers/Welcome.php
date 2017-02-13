@@ -32,6 +32,28 @@ class Welcome extends CI_Controller {
         $this->data['webpage'] = $this->Function_model->get_web_setting();
 
         $this->data['category'] = $this->Category_article_model->get_where(array('is_deleted'=>0));
+
+        $this->data['metaData'] = array(
+        	'title' => '',
+        	'description' => '',
+        	'keywords' => '',
+        	'subject' => '',
+        	'abstract' => '',
+        	'copyright' => '',
+        	'og_title' => '',
+        	'og_description' => '',
+        	'og_image' => '',
+        );
+
+
+        //popular article
+        $articleCount= $this->Article_model->record_count(array(), array());
+
+
+        $randomStart = ($articleCount>=6)?rand(0,$articleCount-6):0;
+        $popularArticle = $this->Article_model->fetch(6, $randomStart, array(), array());
+        $this->data["popularArticle"] = $popularArticle;
+
 	}
 	
 
@@ -78,10 +100,65 @@ class Welcome extends CI_Controller {
 	public function details($id)
 	{
 
+		
+		//echo $this->db->last_query();exit;
+
 		$this->data['articleData'] = $this->Article_model->getOne(array('Article_id'=>$id));
+
+		$this->data['metaData'] = array(
+        	'title' => $this->data['articleData']['article_variable'],
+        	'description' => $this->data['articleData']['page_desc'],
+        	'keywords' => $this->data['articleData']['page_keyword'],
+        	'subject' => $this->data['articleData']['article_variable'],
+        	'abstract' => $this->data['articleData']['page_keyword'],
+        	'copyright' => '',
+        	'og_title' => $this->data['articleData']['article_variable'],
+        	'og_description' => $this->data['articleData']['page_desc'],
+        	'og_image' => $this->data['articleData']['fb_img'],
+        );
+
+
+		//view count
+		$this->Article_model->viewCount($id);
 
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/details',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+
+
+	}
+
+
+	public function search($q='',$page=1)
+	{
+
+		//$this->data['categoryData'] = array();
+
+		//article list
+		$this->data['item_per_page'] = 1;
+		$this->data['page'] = $page;
+        $limit_start = ($page-1)*$this->data['item_per_page'];    
+
+        $sql_where = array();
+        $sql_where['is_deleted'] = 0;            
+
+        $sql_like = array();
+        $sql_like['article_variable'] = $q; 
+        $sql_like['content_cn'] = $q; 
+        
+        $this->data["total"] = $this->Article_model->record_count($sql_where, $sql_like);
+        
+        $results = array();
+        $results = $this->Article_model->fetch($this->data['item_per_page'], $limit_start, $sql_where, $sql_like);
+        $this->data["results"] = $results;
+        
+
+        $url = base_url().$this->data['init']['langu'].'/search/'.$q.'/';
+
+        $this->data['paging'] = $this->Function_model->get_paging_fronted($this->data['item_per_page'],10,$this->data['total'],$page,$url);
+
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/search',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 

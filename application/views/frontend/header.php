@@ -15,18 +15,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<meta name="title" content="" /> 
-<meta name="description" content="" /> 
-<meta name="keywords" content="" />
-<meta name="subject" content="" /> 
-<meta name="copyright" content="" /> 
-<meta name="abstract" content="" />
+<meta name="title" content="<?=$metaData['title']?>" /> 
+<meta name="description" content="<?=$metaData['description']?>" /> 
+<meta name="keywords" content="<?=$metaData['keywords']?>" />
+<meta name="subject" content="<?=$metaData['subject']?>" /> 
+<meta name="abstract" content="<?=$metaData['abstract']?>" />
+<meta name="copyright" content="<?=$metaData['copyright']?>" /> 
+
+
 <meta name="robots" content="All" /> 
     
-<meta property="og:title" content="" />
-<meta property="og:description" content="" />
-<meta property="og:image" content="" />
+<meta property="og:title" content="<?=$metaData['og_title']?>" />
+<meta property="og:description" content="<?=$metaData['og_description']?>" />
+<meta property="og:image" content="<?=$metaData['og_image']?>" />
+<!--
 <meta property="og:url" content="" />
+-->
 
 <link rel="icon" href="">
 
@@ -49,6 +53,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="header" id="ban">
     <div class="container">
       <div class="head-left wow fadeInLeft animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+
         <div class="header-search">
             <div class="search">
               <input class="search_box" type="checkbox" id="search_box">
@@ -61,6 +66,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               </div>
             </div>
         </div>
+
       </div>
       <div class="header_right wow fadeInLeft animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
       <nav class="navbar navbar-default">
@@ -106,7 +112,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   <div class="header-bottom">
     <div class="container">
       <div class="logo wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-        <h1><a href="index.html">STYLE BLOG</a></h1>
+        <h1><a href="<?=base_url($init['langu'])?>">Ba.Na.Na</a></h1>
         <p><label class="of"></label>LET'S MAKE A PERFECT STYLE<label class="on"></label></p>
       </div>
     </div>

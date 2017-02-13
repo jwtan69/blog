@@ -41,16 +41,22 @@ class Vo_upload_handler extends CI_Controller {
 
                         $filename_original = 'pic_'.$pathname.'_ORIGINAL';
                         $uploaddata = $this->Function_model->upload($filename_original,'files1');
-  					
+  					           
+                        //resize
                         $filename = 'pic_'.$pathname;
                         $path 	  = "./uploads/".$filename.'.'.$ext;
                         $save_path = base_url()."uploads/".$filename.'.'.$ext;
                         $this->Function_model->img_resize($uploaddata,$width,$height,$path);
 
+                        //刪除原本的圖片
+                        unlink("./uploads/".$filename_original.'.'.$ext);
+
+                        /*
                         $thumbfilename = 'pic_'.$pathname.'_thumb';
                         $thumbpath     = "./uploads/".$thumbfilename.'.'.$ext;
                         $thumbsave_path = base_url()."uploads/".$thumbfilename.'.'.$ext;
                         $this->Function_model->img_resize($uploaddata,$width/3,$height/3,$thumbpath);
+                        */
 
 
 
