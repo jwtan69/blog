@@ -59,6 +59,14 @@ class Welcome extends CI_Controller {
 		$this->load->view('frontend/footer',$this->data);
 	}
 
+	public function error(){
+
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/error',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+
+	}
+
 	public function index2()
 	{
 		//phpinfo();

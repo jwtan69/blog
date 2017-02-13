@@ -1,12 +1,10 @@
 <!-- banner -->
 
-<div class="banner">
-<div class="container"> 
-    <h2>Contrary to popular belief, Lorem Ipsum simply</h2>
-    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-    <a href="singlepage.html">READ MORE</a>
-  </div>
+<div class="banner-1">
+
 </div>
+
+<!--
 <div class="services w3l wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
     <div class="container">
       <div class="grid_3 grid_5">
@@ -62,6 +60,9 @@
       </div>
     </div>
   </div>
+
+  -->
+
   <!-- technology-left -->
   <div class="technology">
   <div class="container">
