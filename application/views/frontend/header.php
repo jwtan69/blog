@@ -28,10 +28,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <meta property="og:type" content="website" />  
 <meta property="og:title" content="<?=$metaData['og_title']?>" />
 <meta property="og:description" content="<?=$metaData['og_description']?>" />
+<!--
 <meta property="og:image" content="<?=$metaData['og_image']?>" />
 <meta property="og:image:width" content="736" />
 <meta property="og:image:height" content="356" />
-<!--
 <meta property="og:url" content="" />
 -->
 
