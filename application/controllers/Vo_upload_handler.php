@@ -58,6 +58,23 @@ class Vo_upload_handler extends CI_Controller {
                         $this->Function_model->img_resize($uploaddata,$width/3,$height/3,$thumbpath);
                         */
 
+                        //s3
+                        /*
+                        $input = array();
+                        $input['file'] = $path;
+
+                        $tmp_data = array(
+                            'input' => $input,
+                            'output_file' => $filename.'.'.$ext,
+                            'filename_oripath' => './uploads/'.$uploaddata['file_name'],
+                        );
+
+                        $upload_return = $this->Function_model->file_upload($tmp_data,0,1);
+
+                        if($upload_return !=''){
+                          $save_path = $upload_return;
+                        }
+                        */
 
 
   					 $filelist = array();

@@ -311,5 +311,12 @@ class Welcome extends CI_Controller {
 
 	}
 
+	public function testEmail(){
+
+		//echo phpinfo();
+
+		$this->Function_model->sendMail('jwtan69@gmail.com','jwtan69@gmail.com','subject','content');
+
+	}
 
 }

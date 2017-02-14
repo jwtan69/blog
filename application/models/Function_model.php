@@ -832,6 +832,59 @@ class Function_model extends CI_Model{
 
 
     }
+
+    public function file_upload($data,$unlink_ori,$unlink_thumb){
+
+            //把縮圖上到S3
+            $this->load->library('s3'); 
+                        
+            $result = $this->s3->putObject($data['input'], "testbucket696", $data['output_file'], "public-read", array(), array(
+                'Content-Type' => 'image/jpeg',
+            ));
+
+            if($result){                        
+                $public_url = "http://s3-ap-southeast-1.amazonaws.com/testbucket696/".$data['output_file'];
+                
+                if($unlink_thumb == 1){
+                //上了S3之後就刪掉縮圖
+                    $result = unlink($data['input']['file']);
+                    if(!$result){
+                        show_error('cannot delete thumb');  
+                    }
+                }
+
+                if($unlink_ori == 1){  
+                    $result = unlink($data['filename_oripath']);
+                    if(!$result){
+                        show_error('cannot delete original');   
+                    }
+
+                }
+
+                return $public_url;
+                
+            } else {
+                show_error("s3 FAilure");
+                return false;
+            }
+
+
+
+    }
+
+    public function sendMail($from,$to,$subject,$content){
+
+        $this->load->library('email');
+        $this->email->clear();  
+        $this->email->from($from);
+        $this->email->to($to); 
+        $this->email->subject($subject);
+        $this->email->message($content); 
+        $this->email->set_newline("\r\n");              
+        $this->email->send();
+        echo $this->email->print_debugger();
+
+    }
 	
 }
 ?>

@@ -65,6 +65,8 @@ $route['^(en|zh|cn)/search/(:any)/(:num)'] = 'welcome/search/$2/$3';
 $route['^(en|zh|cn)/index2'] = 'welcome/index2';
 $route['^(en|zh|cn)/toto'] = "welcome/toto";
 $route['^(en|zh|cn)/crontab'] = "welcome/crontab";
+$route['^(en|zh|cn)/testEmail'] = "welcome/testEmail";
+
 
 //upload handle
 $route['^(en|zh|cn)/vo/upload_handler'] = "vo_upload_handler"; 

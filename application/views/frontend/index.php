@@ -73,7 +73,7 @@
        <div class="tc-ch wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
         
           <div class="tch-img">
-            <a href="singlepage.html"><img src="images/t4.jpg" class="img-responsive" alt=""></a>
+            <a href="singlepage.html"><img src="<?=base_url('assets/images/t4.jpg')?>" class="img-responsive" alt=""></a>
           </div>
           
           <h3><a href="singlepage.html">Lorem Ipsum is simply</a></h3>

@@ -48,6 +48,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  new WOW().init();
 </script>
 <!-- //animation-effect -->
+
+<style>
+img{
+  width:100% !important;
+}
+</style>
+
 </head>
 <body>
 <div class="header" id="ban">
