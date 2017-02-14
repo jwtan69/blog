@@ -48,8 +48,6 @@ class Welcome extends CI_Controller {
 
         //popular article
         $articleCount= $this->Article_model->record_count(array(), array());
-
-
         $randomStart = ($articleCount>=6)?rand(0,$articleCount-6):0;
         $popularArticle = $this->Article_model->fetch(6, $randomStart, array(), array());
         $this->data["popularArticle"] = $popularArticle;
@@ -114,7 +112,7 @@ class Welcome extends CI_Controller {
         	'copyright' => '',
         	'og_title' => $this->data['articleData']['article_variable'],
         	'og_description' => $this->data['articleData']['page_desc'],
-        	'og_image' => $this->data['articleData']['fb_img'],
+        	'og_image' => $this->data['articleData']['main_img'],
         );
 
 
@@ -163,6 +161,11 @@ class Welcome extends CI_Controller {
 	}
 
 	public function error(){
+
+		$articleCount= $this->Article_model->record_count(array(), array());
+		$randomStart = ($articleCount>=6)?rand(0,$articleCount-6):0;
+        $popularArticle = $this->Article_model->fetch(6, $randomStart, array(), array());
+        $this->data["results"] = $popularArticle;
 
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/error',$this->data);

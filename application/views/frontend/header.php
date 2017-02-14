@@ -28,12 +28,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <meta property="og:type" content="website" />  
 <meta property="og:title" content="<?=$metaData['og_title']?>" />
 <meta property="og:description" content="<?=$metaData['og_description']?>" />
-<!--
+
+
 <meta property="og:image" content="<?=$metaData['og_image']?>" />
 <meta property="og:image:width" content="736" />
 <meta property="og:image:height" content="356" />
-<meta property="og:url" content="" />
--->
+<meta property="og:url" content="<?=$_SERVER['HTTP_REFERER']?>" />
+
 
 <link rel="icon" href="">
 
@@ -54,7 +55,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <style>
 img{
-  width:100% !important;
+    display: block;
+    max-width: 100% !important;
+    height: auto !important;
 }
 </style>
 
@@ -74,6 +77,8 @@ img{
 
         <div class="header-search">
             <div class="search">
+              &nbsp;
+              <!--
               <input class="search_box" type="checkbox" id="search_box">
               <label class="icon-search" for="search_box"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></label>
               <div class="search_form">
@@ -82,6 +87,7 @@ img{
                   <input type="submit" value="Send">
                 </form>
               </div>
+              -->
             </div>
         </div>
 
@@ -131,7 +137,7 @@ img{
     <div class="container">
       <div class="logo wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
         <h1><a href="<?=base_url($init['langu'])?>">Ba.Na.Na</a></h1>
-        <p><label class="of"></label>LET'S MAKE A PERFECT STYLE<label class="on"></label></p>
+        <p><label class="of"></label>8.6.6<label class="on"></label></p>
       </div>
     </div>
   </div>

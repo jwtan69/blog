@@ -10,18 +10,36 @@
 		<div class="col-md-9 technology-left">
 			<div class="agileinfo">
 
-		  <h2 class="w3">抱歉，頁面不存在！</h2>
-			<div class="single">
-			   <img src="images/sing-1.jpg" class="img-responsive" alt="">
-			    <div class="b-bottom"> 
-			      <h5 class="top">What turn out consetetur sadipscing elit</h5>
-				   <p class="sub">Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since,Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industryLorem Ipsum has been the industry's standard dummy text ever since Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-				 
+		  	<h2 class="w3">抱歉，頁面不存在！</h2>
+			<?php 
+				foreach($results as $k => $v){
+					if($k%2 == 0){
+						echo '<div class="blog-grids1">';
+					}
+			?>
+				<div class="col-md-6 blog-grid">
+					<div class="blog-grid-left1">
+						<a href="<?=base_url($init['langu'].'/details/'.$v['article_id'])?>"><img src="<?=$v['main_img']?>" alt=" " class="img-responsive"></a>
+					</div> 
+					<div class="blog-grid-right1">
+						<a href="<?=base_url($init['langu'].'/details/'.$v['article_id'])?>"><?=$v['article_variable']?></a>
+						<h4><?=date('d-m-Y',strtotime($v['created_date']))?></h4>
+						<p><?=$v['page_desc']?></p>
+					</div>
+					<div class="clearfix"> </div>
 				</div>
-			 </div>
-			  
-				
-				<div class="clearfix"></div>
+
+			<?php 
+
+					if($k%2 == 1 || $k==count($results)-1){
+						echo '<div class="clearfix"> </div>';
+						echo '</div>';
+					}
+
+				}
+			?>
+
+
 			</div>
 		</div>
 		<!-- technology-right -->
