@@ -33,7 +33,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <meta property="og:image" content="<?=$metaData['og_image']?>" />
 <meta property="og:image:width" content="736" />
 <meta property="og:image:height" content="356" />
-<meta property="og:url" content="<?=$_SERVER['HTTP_REFERER']?>" />
+<meta property="og:url" content="" />
 
 
 <link rel="icon" href="">
