@@ -24,7 +24,7 @@
 					<div class="blog-grid-right1">
 						<a href="<?=base_url($init['langu'].'/details/'.$v['article_id'])?>"><?=$v['article_variable']?></a>
 						<h4><?=date('d-m-Y',strtotime($v['created_date']))?></h4>
-						<p><?=$v['page_desc']?></p>
+						<p><?=mb_substr($v['page_desc'],0,100)?>...</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>

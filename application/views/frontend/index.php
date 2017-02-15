@@ -1,7 +1,9 @@
 <!-- banner -->
 
-<div class="banner-1">
-
+<div class="banner">
+  <div class="container"> 
+    <h2>一天一香蕉，生活更愉快！</h2>
+  </div>
 </div>
 
 <!--
@@ -70,7 +72,7 @@
     <div class="tech-no">
 
       <!-- technology-top -->
-      <?php if(isset($artResult3)){?>
+      <?php if(isset($artResult1)){?>
        <div class="tc-ch wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
         
           <div class="tch-img">
@@ -81,7 +83,7 @@
           <a href="<?=base_url($init['langu'].'/details/'.$artResult1[0]['article_id'].'/'.$artResult1[0]['article_variable'])?>"><?=$artResult1[0]['article_variable']?></a>
           </h3>
           <h6><?=date('d-m-Y',strtotime($artResult1[0]['created_date']))?></h6>
-            <p><?=$artResult1[0]['page_desc']?></p>
+            <p><?=mb_substr($artResult1[0]['page_desc'],0,100)?>...</p>
             <!--
             <div class="bht1">
               <a href="singlepage.html">Continue Reading</a>
@@ -116,7 +118,7 @@
           
             <h3><a href="<?=base_url($init['langu'].'/details/'.$v['article_id'].'/'.$v['article_variable'])?>"><?=$v['article_variable']?></a></h3>
             <h6><?=date('d-m-Y',strtotime($v['created_date']))?></h6>
-              <p><?=$v['page_desc']?></p>
+              <p><?=mb_substr($v['page_desc'],0,100)?>...</p>
               <!--
               <div class="bht1">
                 <a href="singlepage.html">Read More</a>
@@ -148,7 +150,7 @@
          <div class="col-md-6 wthree-right wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
             <h3><a href="<?=base_url($init['langu'].'/details/'.$v['article_id'].'/'.$v['article_variable'])?>"><?=$v['article_variable']?></a></h3>
             <h6><?=date('d-m-Y',strtotime($v['created_date']))?></h6>
-              <p><?=$v['page_desc']?></p>
+              <p><?=mb_substr($v['page_desc'],0,100)?>...</p>
               
               <!--
               <div class="bht1">

@@ -290,7 +290,7 @@ background-size:cover;
 -o-background-size: cover;
 -ms-background-size: cover;
 -moz-background-size: cover;
-min-height: 600px;
+min-height: 350px;
 }
 .banner-1{
 background: url(../images/bananabanner.jpg) no-repeat 0px 0px;

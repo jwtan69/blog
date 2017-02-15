@@ -3,7 +3,7 @@
 <div class="footer">
 		<div class="container">
 			<div class="col-md-4 footer-left wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-				<h4>免責声明</h4>
+				<h4>免责声明</h4>
 				<p>本站所有文章由会员即时发表，本站对所有文章的真实性、完整性及立场等，不负任何法律责任。所有文章内容只代表发文者个人意见，并非本网站之立场，用户不应信赖内容，并应自行判断内容之真实性。</p>
 				<!--
 				<img src="images/t4.jpg" class="img-responsive" alt="">

@@ -47,9 +47,9 @@ class Welcome extends CI_Controller {
 
 
         //popular article
-        $articleCount= $this->Article_model->record_count(array(), array());
+        $articleCount= $this->Article_model->record_count(array('is_deleted'=>0), array());
         $randomStart = ($articleCount>=6)?rand(0,$articleCount-6):0;
-        $popularArticle = $this->Article_model->fetch(6, $randomStart, array(), array());
+        $popularArticle = $this->Article_model->fetch(6, $randomStart, array('is_deleted'=>0), array());
         $this->data["popularArticle"] = $popularArticle;
 
 
@@ -74,12 +74,26 @@ class Welcome extends CI_Controller {
 			$rand_keys = array();
 		}
 
-		foreach($rand_keys as $k => $v){
-			$tmpNo = $k+1;
+		//print_r($rand_keys);exit;
+		//echo $randNo;exit;
+
+		if(is_array($rand_keys)){
+			foreach($rand_keys as $k => $v){
+				$tmpNo = $k+1;
+				$tmpVar = "artResult{$tmpNo}";
+				$tmpArtId = $categoryGroup[$v];
+				$this->data[$tmpVar] = $this->Article_model->fetch($tmpNo, 0,array('category_id'=>$tmpArtId ));
+			}
+		}else{
+
+			$tmpNo = 1;
 			$tmpVar = "artResult{$tmpNo}";
-			$tmpArtId = $categoryGroup[$v];
+			$tmpArtId = $categoryGroup[$rand_keys];
 			$this->data[$tmpVar] = $this->Article_model->fetch($tmpNo, 0,array('category_id'=>$tmpArtId ));
+
 		}
+
+		
 
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/index',$this->data);

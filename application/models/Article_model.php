@@ -23,6 +23,7 @@ class Article_model extends MY_Model {
       public function groupBy($groupBy){
 
             $this->db->select($groupBy);
+            $this->db->where('is_deleted', 0);
             $this->db->group_by($groupBy); 
             $query = $this->db->get($this->table_name);
             $row = $query->result_array();
