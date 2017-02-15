@@ -58,6 +58,7 @@ $route['^(en|zh|cn)/category/(:num)/(:any)'] = 'welcome/category/$2/$3';
 $route['^(en|zh|cn)/category/(:num)/(:any)/(:num)'] = 'welcome/category/$2/$3/$4';
 
 $route['^(en|zh|cn)/details/(:num)'] = 'welcome/details/$2';
+$route['^(en|zh|cn)/details/(:num)/(:any)'] = 'welcome/details/$2/$3';
 
 $route['^(en|zh|cn)/search/(:any)'] = 'welcome/search/$2';
 $route['^(en|zh|cn)/search/(:any)/(:num)'] = 'welcome/search/$2/$3';

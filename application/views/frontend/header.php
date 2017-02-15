@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Style Blog a Blogging Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+<title>Ba.Na.Na 866</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -36,7 +36,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <meta property="og:url" content="" />
 
 
-<link rel="icon" href="">
+<link rel="icon" href="<?=base_url('assets/images/banana-icon.png')?>">
 
 <script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="<?=base_url('assets/css/bootstrap.css')?>" rel='stylesheet' type='text/css' />
@@ -120,8 +120,8 @@ img{
       </div>
       <div class="nav navbar-nav navbar-right social-icons wow fadeInRight animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
           <ul>
-            <li><a href="#"> </a></li>
             <!--
+            <li><a href="#"> </a></li>
             <li><a href="#" class="pin"> </a></li>
             <li><a href="#" class="in"> </a></li>
             <li><a href="#" class="be"> </a></li>

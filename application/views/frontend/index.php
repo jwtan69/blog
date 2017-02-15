@@ -68,18 +68,21 @@
   <div class="container">
     <div class="col-md-9 technology-left">
     <div class="tech-no">
+
       <!-- technology-top -->
-      
+      <?php if(isset($artResult3)){?>
        <div class="tc-ch wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
         
           <div class="tch-img">
-            <a href="singlepage.html"><img src="<?=base_url('assets/images/t4.jpg')?>" class="img-responsive" alt=""></a>
+            <a href="<?=base_url($init['langu'].'/details/'.$artResult1[0]['article_id'].'/'.$artResult1[0]['article_variable'])?>"><img src="<?=$artResult1[0]['main_img']?>" class="img-responsive" alt=""></a>
           </div>
           
-          <h3><a href="singlepage.html">Lorem Ipsum is simply</a></h3>
-          <h6>BY <a href="singlepage.html">ADAM ROSE </a>JULY 10 2016.</h6>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna aliqua exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p>Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna aliqua exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <h3>
+          <a href="<?=base_url($init['langu'].'/details/'.$artResult1[0]['article_id'].'/'.$artResult1[0]['article_variable'])?>"><?=$artResult1[0]['article_variable']?></a>
+          </h3>
+          <h6><?=date('d-m-Y',strtotime($artResult1[0]['created_date']))?></h6>
+            <p><?=$artResult1[0]['page_desc']?></p>
+            <!--
             <div class="bht1">
               <a href="singlepage.html">Continue Reading</a>
             </div>
@@ -92,22 +95,29 @@
                 <li class="hvr-rectangle-out"><a class="drib" href="#"></a></li>
               </ul>
             </div>
+            -->
             <div class="clearfix"></div>
       </div>
       <div class="clearfix"></div>
+      <?php }?>
       <!-- technology-top -->
+
+
       <!-- technology-top -->
+      <?php if(isset($artResult2)){?>
       <div class="w3ls">
+        <?php foreach($artResult2 as $k => $v){?>
         <div class="col-md-6 w3ls-left wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
            <div class="tc-ch">
             <div class="tch-img">
-              <a href="singlepage.html">
-              <img src="images/m4.jpg" class="img-responsive" alt=""></a>
+              <a href="<?=base_url($init['langu'].'/details/'.$v['article_id'].'/'.$v['article_variable'])?>">
+              <img src="<?=$v['main_img']?>" class="img-responsive" alt=""></a>
             </div>
           
-            <h3><a href="singlepage.html">Lorem Ipsum is simply</a></h3>
-            <h6>BY <a href="singlepage.html">ADAM ROSE </a>JULY 10 2016.</h6>
-              <p>Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna aliqua exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <h3><a href="<?=base_url($init['langu'].'/details/'.$v['article_id'].'/'.$v['article_variable'])?>"><?=$v['article_variable']?></a></h3>
+            <h6><?=date('d-m-Y',strtotime($v['created_date']))?></h6>
+              <p><?=$v['page_desc']?></p>
+              <!--
               <div class="bht1">
                 <a href="singlepage.html">Read More</a>
               </div>
@@ -117,43 +127,30 @@
                   <li class="hvr-rectangle-out"><a class="pin" href="#"></a></li>
                 </ul>
               </div>
+              -->
               <div class="clearfix"></div>
           </div>
         </div>
-        <div class="col-md-6 w3ls-left wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-           <div class="tc-ch">
-            <div class="tch-img">
-              <a href="singlepage.html"><img src="images/m5.jpg" class="img-responsive" alt=""></a>
-            </div>
-          
-            <h3><a href="singlepage.html">Lorem Ipsum is simply</a></h3>
-            <h6>BY <a href="singlepage.html">ADAM ROSE </a>JULY 10 2016.</h6>
-              <p>Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna aliqua exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              <div class="bht1">
-                <a href="singlepage.html">Read More</a>
-              </div>
-              <div class="soci">
-                <ul>
-                  <li class="hvr-rectangle-out"><a class="twit" href="#"></a></li>
-                  <li class="hvr-rectangle-out"><a class="drib" href="#"></a></li>
-                </ul>
-              </div>
-              <div class="clearfix"></div>
-          </div>
-        </div>
+        <?php }?>
         <div class="clearfix"></div>
       </div>
+      <?php }?>
       <!-- technology-top -->
+
+      <?php if(isset($artResult3)){?>
+      <?php foreach($artResult3 as $k => $v){?>
       <div class="wthree">
          <div class="col-md-6 wthree-left wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
           <div class="tch-img">
-              <a href="singlepage.html"><img src="images/f1.jpg" class="img-responsive" alt=""></a>
+              <a href="<?=base_url($init['langu'].'/details/'.$v['article_id'].'/'.$v['article_variable'])?>"><img src="<?=$v['main_img']?>" class="img-responsive" alt=""></a>
             </div>
          </div>
          <div class="col-md-6 wthree-right wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-            <h3><a href="singlepage.html">Lorem Ipsum is simply</a></h3>
-            <h6>BY <a href="singlepage.html">ADAM ROSE </a>JULY 10 2016.</h6>
-              <p>Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna aliqua exercitation ullamco laboris .</p>
+            <h3><a href="<?=base_url($init['langu'].'/details/'.$v['article_id'].'/'.$v['article_variable'])?>"><?=$v['article_variable']?></a></h3>
+            <h6><?=date('d-m-Y',strtotime($v['created_date']))?></h6>
+              <p><?=$v['page_desc']?></p>
+              
+              <!--
               <div class="bht1">
                 <a href="singlepage.html">Read More</a>
               </div>
@@ -164,59 +161,16 @@
                   <li class="hvr-rectangle-out"><a class="pin" href="#"></a></li>
                 </ul>
               </div>
+              -->
               <div class="clearfix"></div>
           
          </div>
-          <div class="clearfix"></div>
+         <div class="clearfix"></div>
       </div>
-      <div class="wthree">
-         <div class="col-md-6 wthree-left wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-          <div class="tch-img">
-              <a href="singlepage.html"><img src="images/f2.jpg" class="img-responsive" alt=""></a>
-            </div>
-         </div>
-         <div class="col-md-6 wthree-right wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-            <h3><a href="singlepage.html">Lorem Ipsum is simply</a></h3>
-            <h6>BY <a href="singlepage.html">ADAM ROSE </a>JULY 10 2016.</h6>
-              <p>Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna aliqua exercitation ullamco laboris .</p>
-              <div class="bht1">
-                <a href="singlepage.html">Read More</a>
-              </div>
-              <div class="soci">
-                <ul>
-                  <li class="hvr-rectangle-out"><a class="goog" href="#"></a></li>                  
-                  <li class="hvr-rectangle-out"><a class="fb" href="#"></a></li>
-                </ul>
-              </div>
-              <div class="clearfix"></div>
-          
-         </div>
-          <div class="clearfix"></div>
-      </div>
-      <div class="wthree">
-         <div class="col-md-6 wthree-left wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-          <div class="tch-img">
-              <a href="singlepage.html"><img src="images/f3.jpg" class="img-responsive" alt=""></a>
-            </div>
-         </div>
-         <div class="col-md-6 wthree-right wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-            <h3><a href="singlepage.html">Lorem Ipsum is simply</a></h3>
-            <h6>BY <a href="singlepage.html">ADAM ROSE </a>JULY 10 2016.</h6>
-              <p>Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna aliqua exercitation ullamco laboris.</p>
-              <div class="bht1">
-                <a href="singlepage.html">Read More</a>
-              </div>
-              <div class="soci">
-                <ul>
-                  <li class="hvr-rectangle-out"><a class="drib" href="#"></a></li>
-                  <li class="hvr-rectangle-out"><a class="goog" href="#"></a></li>
-                </ul>
-              </div>
-              <div class="clearfix"></div>
-          
-         </div>
-          <div class="clearfix"></div>
-      </div>
+      <?php }?>
+      <?php }?>
+      
+      
       </div>
     </div>
     <!-- technology-right -->
@@ -226,6 +180,9 @@
         <div class="blo-top1">
               
           <div class="tech-btm">
+
+          <?=$fbSharePageCode?>
+
           <div class="search-1 wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
               <form action="" method="" onsubmit="toSearch();">
                 <input type="search" name="Search" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}" required="">

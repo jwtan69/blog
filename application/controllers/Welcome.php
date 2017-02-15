@@ -52,11 +52,30 @@ class Welcome extends CI_Controller {
         $popularArticle = $this->Article_model->fetch(6, $randomStart, array(), array());
         $this->data["popularArticle"] = $popularArticle;
 
+
+        $this->data["fbSharePageCode"] ='<div style="margin:20px 0px;" class="fb-page" data-href="https://www.facebook.com/Banana866" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Banana866" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Banana866">Banana866</a></blockquote></div>';
+
 	}
 	
 
 	public function index()
-	{
+	{	
+
+		$categoryGroup = $this->Article_model->groupBy('category_id');
+
+		$randNo = 3;
+		if(count($categoryGroup)<3){
+			$randNo = count($categoryGroup);
+		}
+
+		$rand_keys = array_rand($categoryGroup, $randNo);
+
+		foreach($rand_keys as $k => $v){
+			$tmpNo = $k+1;
+			$tmpVar = "artResult{$tmpNo}";
+			$tmpArtId = $categoryGroup[$v];
+			$this->data[$tmpVar] = $this->Article_model->fetch($tmpNo, 0,array('category_id'=>$tmpArtId ));
+		}
 
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/index',$this->data);
@@ -67,6 +86,10 @@ class Welcome extends CI_Controller {
 	{
 
 		$this->data['categoryData'] = $this->Category_article_model->getOne(array('Category_article_id'=>$id));
+		if(empty($this->data['categoryData'])){
+			$this->error();
+		}
+
 
 		//article list
 		$this->data['item_per_page'] = 6;
@@ -100,8 +123,10 @@ class Welcome extends CI_Controller {
 
 		
 		//echo $this->db->last_query();exit;
-
 		$this->data['articleData'] = $this->Article_model->getOne(array('Article_id'=>$id));
+		if(empty($this->data['articleData'])){
+			$this->error();
+		}
 
 		$this->data['metaData'] = array(
         	'title' => $this->data['articleData']['article_variable'],

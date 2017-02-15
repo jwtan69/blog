@@ -62,6 +62,14 @@
                     </div>
 
                     <div class="form-group">
+                      <label for="article_variable" class="col-lg-2">頁面關鍵字</label>
+                        <div class="col-lg-10">
+                        <input type="text" class="form-control" name="page_keyword" id="page_keyword" value="<?=($mode=='Edit')?$results['page_keyword']:''?>">
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                       <label for="article_variable" class="col-lg-2">主圖</label>
                         <div class="col-lg-10">
                         
@@ -87,6 +95,7 @@
                         </div>
                     </div>
 
+                    <!--
                     <div class="form-group">
                       <label for="article_variable" class="col-lg-2">FB圖片</label>
                         <div class="col-lg-10">
@@ -113,7 +122,7 @@
 
                         </div>
                     </div>
-
+                    
                     <div class="form-group">
                       <label for="article_variable" class="col-lg-2">頁面標題</label>
                         <div class="col-lg-10">
@@ -121,19 +130,12 @@
 
                         </div>
                     </div>
-
-                    <div class="form-group">
-                      <label for="article_variable" class="col-lg-2">頁面關鍵字</label>
-                        <div class="col-lg-10">
-                        <input type="text" class="form-control" name="page_keyword" id="page_keyword" value="<?=($mode=='Edit')?$results['page_keyword']:''?>">
-
-                        </div>
-                    </div>
+                    -->
 
                     <div class="form-group">
                       <label for="article_variable" class="col-lg-2">頁面簡介</label>
                         <div class="col-lg-10">
-                        <input type="text" class="form-control" name="page_desc" id="page_desc" value="<?=($mode=='Edit')?$results['page_desc']:''?>">
+                        <textarea type="text" class="form-control" name="page_desc" id="page_desc"><?=($mode=='Edit')?$results['page_desc']:''?></textarea>
 
                         </div>
                     </div>

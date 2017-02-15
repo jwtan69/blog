@@ -22,6 +22,11 @@
 			      <?=$articleData['content_cn']?>
 				  </div> 
 
+				  <div style="margin:30px 0px;">
+			      <span style="font-size:14px;color:red;">如转载涉及版权等问题请原作者与我们联系(668ananab@gmail.com)我们将在第一时间处理，谢谢！</span>
+				  </div> 
+
+
 				  <p><?=date('d-m-Y',strtotime($articleData['created_date']))?> <a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span><?=$articleData['view_count']?></a></p>
 				</div>
 			 </div>
@@ -37,6 +42,9 @@
 				<div class="blo-top1">
 							
 					<div class="tech-btm">
+
+					<?=$fbSharePageCode?>
+
 					<div class="search-1">
 							<form action="" method="" onsubmit="toSearch();">
 								<input type="search" name="Search" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}" required="">

@@ -20,5 +20,25 @@ class Article_model extends MY_Model {
 
       }
 
+      public function groupBy($groupBy){
+
+            $this->db->select($groupBy);
+            $this->db->group_by($groupBy); 
+            $query = $this->db->get($this->table_name);
+            $row = $query->result_array();
+
+            $data = array();
+            if(!empty($row)){
+
+                  foreach($row as $k => $v){
+                        $data[] = $v['category_id'];
+                  }
+
+            }
+
+            return $data;
+
+      }
+
 }
 ?>

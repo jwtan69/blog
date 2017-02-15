@@ -49,6 +49,9 @@
 				<div class="blo-top1">
 							
 					<div class="tech-btm">
+
+					<?=$fbSharePageCode?>
+
 					<div class="search-1">
 							<form action="" method="" onsubmit="toSearch();">
 								<input type="search" name="Search" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}" required="">
