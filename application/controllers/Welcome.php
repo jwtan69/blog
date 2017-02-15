@@ -68,7 +68,11 @@ class Welcome extends CI_Controller {
 			$randNo = count($categoryGroup);
 		}
 
-		$rand_keys = array_rand($categoryGroup, $randNo);
+		if($randNo!=0){
+			$rand_keys = array_rand($categoryGroup, $randNo);
+		}else{
+			$rand_keys = array();
+		}
 
 		foreach($rand_keys as $k => $v){
 			$tmpNo = $k+1;
