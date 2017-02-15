@@ -42,7 +42,7 @@ class Welcome extends CI_Controller {
         	'copyright' => '',
         	'og_title' => '',
         	'og_description' => '',
-        	'og_image' => '',
+        	'og_image' => base_url('assets/images/bananabanner.jpg'),
         );
 
 
