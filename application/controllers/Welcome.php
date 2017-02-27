@@ -56,6 +56,11 @@ class Welcome extends CI_Controller {
         $this->data["fbSharePageCode"] ='<div style="margin:20px 0px;" class="fb-page" data-href="https://www.facebook.com/Banana866" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Banana866" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Banana866">Banana866</a></blockquote></div>';
 
 	}
+
+	public function phpinfo(){
+
+		echo phpinfo();
+	}
 	
 
 	public function index()
@@ -252,7 +257,7 @@ class Welcome extends CI_Controller {
 				$noAppear[] = $v['6'];
 				$noAppear[] = $v['7'];
 
-				$noTotalValue[] = $v['9'];
+				//$noTotalValue[] = $v['9'];
 
 			}
 

@@ -53,6 +53,8 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = 'welcome/error';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['^(en|zh|cn)/phpinfo'] = 'welcome/phpinfo';
+
 $route['^(en|zh|cn)'] = $route['default_controller'];
 $route['^(en|zh|cn)/category/(:num)/(:any)'] = 'welcome/category/$2/$3';
 $route['^(en|zh|cn)/category/(:num)/(:any)/(:num)'] = 'welcome/category/$2/$3/$4';
