@@ -34,12 +34,12 @@ class Welcome extends CI_Controller {
         $this->data['category'] = $this->Category_article_model->get_where(array('is_deleted'=>0));
 
         $this->data['metaData'] = array(
-        	'title' => '',
-        	'description' => '',
-        	'keywords' => '',
-        	'subject' => '',
-        	'abstract' => '',
-        	'copyright' => '',
+        	'title' => 'Banana866',
+        	'description' => 'Banana866',
+        	'keywords' => 'Banana866',
+        	'subject' => 'Banana866',
+        	'abstract' => 'Banana866',
+        	'copyright' => 'Banana866',
         	'og_title' => '',
         	'og_description' => '',
         	'og_image' => base_url('assets/images/bananabanner.jpg'),
