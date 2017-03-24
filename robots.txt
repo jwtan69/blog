@@ -1,2 +1,2 @@
 User-agent: *
-Disallow: http://www.banana866.com/cn/vo
+Disallow: /vo/
