@@ -183,7 +183,7 @@
               
           <div class="tech-btm">
           
-          <?=//$fbSharePageCode?>
+          <!--<?=$fbSharePageCode?>-->
           
           <div class="search-1 wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
               <form action="" method="" onsubmit="toSearch();">
