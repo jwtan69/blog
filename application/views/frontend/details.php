@@ -55,7 +55,7 @@
 						<?php foreach($popularArticle as $k => $v){?>
 			            <div class="blog-grids wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
 			              <div class="blog-grid-left">
-			                <a href="<?=base_url($init['langu'].'/details/'.$v['article_id'])?>"><img src="<?=$v['main_img']?>" class="img-responsive" alt=""></a>
+			                <a href="<?=base_url($init['langu'].'/details/'.$v['article_id'])?>"></a>
 			              </div>
 			              <div class="blog-grid-right">
 			                
