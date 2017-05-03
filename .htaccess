@@ -1,7 +1,5 @@
 RewriteEngine on
 
-RewriteCond %{SERVER_PORT} 80
-RewriteRule ^(.*)$ https://www.banana866.com/$1 [R,L]
 
 RewriteCond $1 !^(index\.php)
 RewriteCond %{REQUEST_FILENAME} !-f
