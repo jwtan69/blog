@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 if(isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] == "blog.local"){
-$config['base_url'] = 'https://blog.local/';
+$config['base_url'] = 'http://blog.local/';
 }else{
 $config['base_url'] = 'https://www.banana866.com/';
 }
