@@ -12,7 +12,7 @@
 
 		  <h2 class="w3"><?=$articleData['article_variable']?></h2>
 			<div class="single">
-			   <img src="<?=$articleData['main_img']?>" class="img-responsive" alt="">
+			   
 			    <div class="b-bottom"> 
 			      
 			    
