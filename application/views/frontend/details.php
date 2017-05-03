@@ -16,9 +16,7 @@
 			    <div class="b-bottom"> 
 			      
 			    
-			      <div style="margin:30px 0px;">
-			      <?=$articleData['content_cn']?>
-				  </div> 
+			      
 
 				  <div style="margin:30px 0px;">
 			      <span style="font-size:14px;color:red;">如转载涉及版权等问题请原作者与我们联系(668ananab@gmail.com)我们将在第一时间处理，谢谢！</span>
