@@ -15,9 +15,7 @@
 			   <img src="<?=$articleData['main_img']?>" class="img-responsive" alt="">
 			    <div class="b-bottom"> 
 			      
-			      <!-- Go to www.addthis.com/dashboard to customize your tools --> 
-			      <div style="margin:20px 0px;" class="addthis_inline_share_toolbox"></div>
-
+			    
 			      <div style="margin:30px 0px;">
 			      <?=$articleData['content_cn']?>
 				  </div> 
