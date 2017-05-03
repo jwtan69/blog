@@ -12,7 +12,7 @@
 
 		  <h2 class="w3"><?=$articleData['article_variable']?></h2>
 			<div class="single">
-			   
+			   <img src="<?=$articleData['main_img']?>" class="img-responsive" alt="">
 			    <div class="b-bottom"> 
 			      
 			      <!-- Go to www.addthis.com/dashboard to customize your tools --> 
@@ -55,7 +55,7 @@
 						<?php foreach($popularArticle as $k => $v){?>
 			            <div class="blog-grids wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
 			              <div class="blog-grid-left">
-			                <a href="<?=base_url($init['langu'].'/details/'.$v['article_id'])?>"></a>
+			                <a href="<?=base_url($init['langu'].'/details/'.$v['article_id'])?>"><img src="<?=$v['main_img']?>" class="img-responsive" alt=""></a>
 			              </div>
 			              <div class="blog-grid-right">
 			                
