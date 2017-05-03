@@ -25,7 +25,7 @@
 				  </div> 
 
 
-				  <p><?=date('d-m-Y',strtotime($articleData['created_date']))?> <a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span><?=$articleData['view_count']?></a></p>
+				  
 				</div>
 			 </div>
 			  
