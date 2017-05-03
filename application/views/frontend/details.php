@@ -10,8 +10,6 @@
 		<div class="col-md-9 technology-left">
 			<div class="agileinfo">
 
-		 
-			  
 				
 				<div class="clearfix"></div>
 			</div>
@@ -34,16 +32,7 @@
 						</div>
 					<h4>熱門文章 </h4>
 						<?php foreach($popularArticle as $k => $v){?>
-			            <div class="blog-grids wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-			              <div class="blog-grid-left">
-			                <a href="<?=base_url($init['langu'].'/details/'.$v['article_id'])?>"><img src="<?=$v['main_img']?>" class="img-responsive" alt=""></a>
-			              </div>
-			              <div class="blog-grid-right">
-			                
-			                <h5><a href="<?=base_url($init['langu'].'/details/'.$v['article_id'])?>"><?=$v['article_variable']?></a> </h5>
-			              </div>
-			              <div class="clearfix"> </div>
-			            </div>
+			            
 			            <?php }?>
 
 						
