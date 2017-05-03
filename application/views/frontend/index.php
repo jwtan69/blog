@@ -66,7 +66,39 @@
   -->
 
   
-  
+    <!-- technology-right -->
+    <div class="col-md-3 technology-right">
+        
+        
+        <div class="blo-top1">
+              
+          <div class="tech-btm">
+          
+          <!--<?=$fbSharePageCode?>-->
+          
+          <div class="search-1 wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
+              <form action="" method="" onsubmit="toSearch();">
+                <input type="search" name="Search" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}" required="">
+                <input type="submit" value=" ">
+              </form>
+            </div>
+
+       
+
+           
+           
+          <div class="insta wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
+          <h4>Ad</h4>
+            
+          </div>
+          </div>
+          
+          
+          
+        </div>
+        
+      
+    </div>
     <div class="clearfix"></div>
     <!-- technology-right -->
   </div>
