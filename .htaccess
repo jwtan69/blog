@@ -1,5 +1,9 @@
 RewriteEngine on
 
+#Force from http to https
+RewriteCond %{HTTPS} off 
+RewriteCond %{HTTP_HOST} =www.banana866.com
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301]
 
 RewriteCond $1 !^(index\.php)
 RewriteCond %{REQUEST_FILENAME} !-f
