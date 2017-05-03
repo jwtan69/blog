@@ -10,6 +10,9 @@
 		<div class="col-md-9 technology-left">
 			<div class="agileinfo">
 
+		  <h2 class="w3"><?=$articleData['article_variable']?></h2>
+			
+			  
 				
 				<div class="clearfix"></div>
 			</div>
