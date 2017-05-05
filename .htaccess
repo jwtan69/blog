@@ -1,9 +1,5 @@
 RewriteEngine on
 
-RewriteBase /
-RewriteCond %{SERVER_PORT} !=443
-RewriteRule (.*) https://www.banana866.com/$1 [R=301,L]
-
 RewriteCond $1 !^(index\.php)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
