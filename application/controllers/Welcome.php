@@ -60,6 +60,7 @@ class Welcome extends CI_Controller {
 	public function upload(){
 
 		header('Access-Control-Allow-Origin: *');
+		header('Content-Type: application/json');
 		$target_path = "uploads/";
 		 
 		$target_path = $target_path . basename( $_FILES['file']['name']);
