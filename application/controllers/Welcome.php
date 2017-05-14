@@ -81,6 +81,8 @@ class Welcome extends CI_Controller {
 			'status' => $status,
 			'imgUrl' => base_url($target_path),
 		);
+
+		echo json_encode($json);exit;
 		
 
 	}
