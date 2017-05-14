@@ -67,7 +67,7 @@ class Welcome extends CI_Controller {
 		$status = '';
 		if (move_uploaded_file($_FILES['file']['tmp_name'], $target_path)) {
 
-		    echo "Upload and move success";
+		    //echo "Upload and move success";
 			$status = "Upload and move success";
 
 		} else {
@@ -76,19 +76,19 @@ class Welcome extends CI_Controller {
 		    $status = "There was an error uploading the file, please try again!";
 		}
 
-		/*
+		
 		$json = array(
 			'status' => $status,
-			'imgUrl' => base_url(''),
+			'imgUrl' => base_url($target_path),
 		);
-		*/
+		
 
 	}
 
 	public function uploadCheck(){
 
 		$this->load->view('frontend/uploadCheck',$this->data);
-		
+
 	}
 
 	public function phpinfo(){
