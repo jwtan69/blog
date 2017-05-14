@@ -67,9 +67,15 @@ $route['^(en|zh|cn)/search/(:any)/(:num)'] = 'welcome/search/$2/$3';
 
 $route['^(en|zh|cn)/index2'] = 'welcome/index2';
 $route['^(en|zh|cn)/toto'] = "welcome/toto";
+$route['^(en|zh|cn)/angularJS'] = "welcome/angularJS";
+$route['^(en|zh|cn)/todoJson'] = "welcome/todoJson";
 $route['^(en|zh|cn)/crontab'] = "welcome/crontab";
 $route['^(en|zh|cn)/testEmail'] = "welcome/testEmail";
 
+
+//app upload test
+$route['^(en|zh|cn)/upload'] = "welcome/upload";
+$route['^(en|zh|cn)/uploadCheck'] = "welcome/uploadCheck";
 
 //upload handle
 $route['^(en|zh|cn)/vo/upload_handler'] = "vo_upload_handler"; 

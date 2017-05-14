@@ -57,11 +57,44 @@ class Welcome extends CI_Controller {
 
 	}
 
+	public function upload(){
+
+		header('Access-Control-Allow-Origin: *');
+		$target_path = "uploads/";
+		 
+		$target_path = $target_path . basename( $_FILES['file']['name']);
+		 
+		$status = '';
+		if (move_uploaded_file($_FILES['file']['tmp_name'], $target_path)) {
+
+		    echo "Upload and move success";
+			$status = "Upload and move success";
+
+		} else {
+		echo $target_path;
+		    echo "There was an error uploading the file, please try again!";
+		    $status = "There was an error uploading the file, please try again!";
+		}
+
+		/*
+		$json = array(
+			'status' => $status,
+			'imgUrl' => base_url(''),
+		);
+		*/
+
+	}
+
+	public function uploadCheck(){
+
+		$this->load->view('frontend/uploadCheck',$this->data);
+		
+	}
+
 	public function phpinfo(){
 
 		echo phpinfo();
 	}
-	
 
 	public function index()
 	{	
@@ -370,4 +403,23 @@ class Welcome extends CI_Controller {
 
 	}
 
+	//angular js
+	public function angularJS(){
+
+		$this->load->view('frontend/angularJS',$this->data);
+
+	}
+
+	public function todoJson(){
+
+		$json = '[{ "action": "Buy Flowers", "done": false },
+		 { "action": "Get Shoes", "done": false },
+		 { "action": "Collect Tickets", "done": true },
+		 { "action": "Call Joe", "done": false }]';
+
+
+ 		$this->output->set_content_type('application/json')->set_output($json);
+ 		//echo $json;
+
+	}
 }
