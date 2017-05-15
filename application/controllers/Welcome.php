@@ -65,6 +65,53 @@ class Welcome extends CI_Controller {
 		 
 		$target_path = $target_path . basename( $_FILES['file']['name']);
 		 
+
+		////////////////////////
+		if(isset($_FILES['files'])){
+
+			if ($_FILES['files']['name'] != ''){
+
+				$pathinfo = pathinfo($_FILES['files']['name']);
+                $ext = $pathinfo['extension'];
+                $ext = strtolower($ext);
+
+                $pathname = date("YmdHis")."_".rand(1000,9999);
+
+                $filename_original = 'pic_'.$pathname.'_ORIGINAL';
+                $uploaddata = $this->Function_model->upload($filename_original,'files');
+				           
+                //resize
+                $filename = 'pic_'.$pathname;
+                $path 	  = "./uploads/".$filename.'.'.$ext;
+                $save_path = base_url()."uploads/".$filename.'.'.$ext;
+                $this->Function_model->img_resize($uploaddata,300,300,$path);
+
+                //刪除原本的圖片
+                unlink("./uploads/".$filename_original.'.'.$ext);
+
+                $status = "Upload and move success";
+
+			}else{
+
+				$status = "There was an error uploading the file, please try again!";
+
+			}				
+
+	    }else{
+
+	    	$status = "There was an error uploading the file, please try again!";
+
+	    }
+
+
+
+
+		////////////////////////
+
+
+
+		/*
+
 		$status = '';
 		if (move_uploaded_file($_FILES['file']['tmp_name'], $target_path)) {
 
@@ -72,10 +119,12 @@ class Welcome extends CI_Controller {
 			$status = "Upload and move success";
 
 		} else {
-		echo $target_path;
-		    echo "There was an error uploading the file, please try again!";
+			//echo $target_path;
+		    //echo "There was an error uploading the file, please try again!";
 		    $status = "There was an error uploading the file, please try again!";
 		}
+
+		*/
 
 		
 		$json = array(
