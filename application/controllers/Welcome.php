@@ -61,24 +61,25 @@ class Welcome extends CI_Controller {
 
 		header('Access-Control-Allow-Origin: *');
 		header('Content-Type: application/json');
-		$target_path = "uploads/";
+		
+		//$target_path = "uploads/";
 		 
-		$target_path = $target_path . basename( $_FILES['file']['name']);
+		//$target_path = $target_path . basename( $_FILES['file']['name']);
 		 
 
 		////////////////////////
-		if(isset($_FILES['files'])){
+		if(isset($_FILES['file'])){
 
-			if ($_FILES['files']['name'] != ''){
+			if ($_FILES['file']['name'] != ''){
 
-				$pathinfo = pathinfo($_FILES['files']['name']);
+				$pathinfo = pathinfo($_FILES['file']['name']);
                 $ext = $pathinfo['extension'];
                 $ext = strtolower($ext);
 
                 $pathname = date("YmdHis")."_".rand(1000,9999);
 
                 $filename_original = 'pic_'.$pathname.'_ORIGINAL';
-                $uploaddata = $this->Function_model->upload($filename_original,'files');
+                $uploaddata = $this->Function_model->upload($filename_original,'file');
 				           
                 //resize
                 $filename = 'pic_'.$pathname;
@@ -129,7 +130,7 @@ class Welcome extends CI_Controller {
 		
 		$json = array(
 			'status' => $status,
-			'imgUrl' => base_url($target_path),
+			'imgUrl' => $save_path,
 			'postData' => json_encode($_FILES),
 			'reqData' => json_encode($_REQUEST),
 		);
