@@ -158,7 +158,7 @@ class Welcome extends CI_Controller {
 			    if (!is_dir($file))
 			    {
 
-			    	$apiArray = array(
+			    	$apiArray[] = array(
 			    		'name' => $file,
 			    		'imgUrl' => base_url().'uploads/'.$file,
 			    	);
