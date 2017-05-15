@@ -140,11 +140,59 @@ class Welcome extends CI_Controller {
 
 	}
 
+	public function apiUploadCheck(){
+
+		header('Access-Control-Allow-Origin: *');
+		header('Content-Type: application/json');
+
+		  $scan = scandir('uploads');
+
+		  $status = '';
+		  $apiArray = array();
+
+
+		  if(!empty($scan)){
+
+		  	foreach($scan as $file){
+
+			    if (!is_dir($file))
+			    {
+
+			    	$apiArray = array(
+			    		'name' => $file,
+			    		'imgUrl' => base_url().'uploads/'.$file,
+			    	);
+
+			    }
+			  
+			  }
+
+			  $status = 'success';
+
+		  }else{
+
+		  		$status = 'fail';
+
+		  }
+
+
+		  $json = array(
+		  	'status' => $status,
+		  	'respone' => $apiArray,
+		  );
+
+		  echo json_encode($json);exit;
+		  
+
+	}
+
 	public function uploadCheck(){
 
 		$this->load->view('frontend/uploadCheck',$this->data);
 
 	}
+
+	
 
 	public function phpinfo(){
 
