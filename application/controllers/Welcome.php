@@ -26,6 +26,7 @@ class Welcome extends CI_Controller {
 		$this->load->model('Function_model');	
 		$this->load->model('Article_model');
 		$this->load->model('Category_article_model');		
+		$this->load->model('deviceToken_model');	
 
 		$this->data['init'] = $this->Function_model->page_init();
         $this->data['item_per_page'] = $this->Function_model->item_per_page();
@@ -189,6 +190,21 @@ class Welcome extends CI_Controller {
 	public function uploadCheck(){
 
 		$this->load->view('frontend/uploadCheck',$this->data);
+
+	}
+
+	public function saveToken(){
+
+		$data = $_REQUEST;
+
+		$json = array('token'=>json_encode($data));
+
+		$this->deviceToken_model->insert($json);
+
+		$respone = array('status'=>'ok');
+		echo json_encode($respone);
+
+		exit;
 
 	}
 

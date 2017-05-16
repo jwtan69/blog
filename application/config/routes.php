@@ -77,6 +77,7 @@ $route['^(en|zh|cn)/testEmail'] = "welcome/testEmail";
 $route['^(en|zh|cn)/upload'] = "welcome/upload";
 $route['^(en|zh|cn)/uploadCheck'] = "welcome/uploadCheck";
 $route['^(en|zh|cn)/api/uploadCheck'] = "welcome/apiUploadCheck";
+$route['^(en|zh|cn)/api/saveToken'] = "welcome/saveToken";
 
 //upload handle
 $route['^(en|zh|cn)/vo/upload_handler'] = "vo_upload_handler"; 
