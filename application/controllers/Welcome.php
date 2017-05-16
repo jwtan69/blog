@@ -199,7 +199,7 @@ class Welcome extends CI_Controller {
 
 		$json = array('token'=>json_encode($data));
 
-		$this->deviceToken_model->insert($json);
+		$this->DeviceToken_model->insert($json);
 
 		$respone = array('status'=>'ok');
 		echo json_encode($respone);
