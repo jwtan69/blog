@@ -26,7 +26,7 @@ class Welcome extends CI_Controller {
 		$this->load->model('Function_model');	
 		$this->load->model('Article_model');
 		$this->load->model('Category_article_model');		
-		$this->load->model('deviceToken_model');	
+		$this->load->model('DeviceToken_model');	
 
 		$this->data['init'] = $this->Function_model->page_init();
         $this->data['item_per_page'] = $this->Function_model->item_per_page();

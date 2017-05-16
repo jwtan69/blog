@@ -1,5 +1,5 @@
 <?php
-class deviceToken_model extends MY_Model {
+class DeviceToken_model extends MY_Model {
       
       protected $table_name = "deviceToken";
 
