@@ -209,8 +209,7 @@ class Welcome extends CI_Controller {
 		$data = $_REQUEST;
 
 		$json = array(
-			'token'=>json_encode($data),
-			'postdata'=>$postdata2,
+			'token'=>json_encode($postdata2),
 		);
 
 		$this->DeviceToken_model->insert($json);
