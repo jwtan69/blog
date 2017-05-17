@@ -195,6 +195,9 @@ class Welcome extends CI_Controller {
 
 	public function saveToken(){
 
+		header('Access-Control-Allow-Origin: *');
+		header('Content-Type: application/json');
+
 		$data = $_REQUEST;
 
 		$json = array('token'=>json_encode($data));
