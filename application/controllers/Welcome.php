@@ -199,7 +199,7 @@ class Welcome extends CI_Controller {
         header("Access-Control-Allow-Origin: *");
         header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 
-		if(isset($_SERVER["CONTENT_TYPE"]) && strpos($_SERVER["CONTENT_TYPE"], "application/json") !== false) {
+		//if(isset($_SERVER["CONTENT_TYPE"]) && strpos($_SERVER["CONTENT_TYPE"], "application/json") !== false) {
             $_POST = array_merge($_POST, (array) json_decode(trim(file_get_contents('php://input')), true));
 
             /*
@@ -214,7 +214,7 @@ class Welcome extends CI_Controller {
 	 		$postdata2 = $this->input->post("token", true);
 
 
- 		}
+ 		//}
 
 
 		//$data = $_REQUEST;
