@@ -198,9 +198,14 @@ class Welcome extends CI_Controller {
 		header('Access-Control-Allow-Origin: *');
 		header('Content-Type: application/json');
 
+		$postdata = file_get_contents("php://input");
+
 		$data = $_REQUEST;
 
-		$json = array('token'=>json_encode($data));
+		$json = array(
+			'token'=>json_encode($data),
+			'postdata'=>$postdata,
+		);
 
 		$this->DeviceToken_model->insert($json);
 
