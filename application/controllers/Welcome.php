@@ -141,6 +141,74 @@ class Welcome extends CI_Controller {
 
 	}
 
+	public function uploadImgs(){
+
+
+		header('Content-Type: application/json; charset=utf-8');
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+
+		if(isset($_SERVER["CONTENT_TYPE"]) && strpos($_SERVER["CONTENT_TYPE"], "application/json") !== false) {
+            $_POST = array_merge($_POST, (array) json_decode(trim(file_get_contents('php://input')), true));
+
+            /*
+			$postdata = file_get_contents("php://input");
+			if (isset($postdata)) {
+	 			$postdata2 = json_decode($postdata);
+	 		}else{
+	 			$postdata2 = 'none';
+	 		}
+	 		*/
+
+	 		foreach($_POST['token'] as $v){
+
+	 			$output_file = "register_".date("YmdHis").rand(1000,9999).".jpg";                                 
+                $this->base64_to_jpeg($v,"./uploads/".$output_file);
+
+	 		}
+
+
+	 		$postdata2 = $this->input->post("token", true);
+
+	 		//$data = $_REQUEST;
+
+			$json = array(
+				'token'=>json_encode($_POST),
+			);
+
+			$this->DeviceToken_model->insert($json);
+
+			$respone = array('status'=>'ok');
+
+ 		}else{
+
+ 			$respone = array('status'=>'fail');
+ 		}
+
+		
+		echo json_encode($respone);
+
+		exit;
+
+
+
+	}
+
+	public function base64_to_jpeg($base64_string, $output_file) {
+        $ifp = fopen($output_file, "wb"); 
+        
+        if(strpos($base64_string,",") !== false) {
+            $data = explode(',', $base64_string);           
+            fwrite($ifp, base64_decode($data[1])); 
+        } else {
+            fwrite($ifp, base64_decode($base64_string));    
+        }
+        fclose($ifp); 
+    
+        return $output_file; 
+    }
+
+
 	public function apiUploadCheck(){
 
 		header('Access-Control-Allow-Origin: *');
