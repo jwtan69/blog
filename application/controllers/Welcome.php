@@ -58,6 +58,54 @@ class Welcome extends CI_Controller {
 
 	}
 
+	public function apitest(){
+
+		$data = array(
+			'send_to_all' => 1,
+			//'tokens' => 'esGGOogvzUI:APA91bFb6D4EfaOi5Wh-_OaRF0AbAm8rjbyCpRxoDuoXsTh5-Qr1NfV9NasfxyDYj3KTPjB8ks_-vvEvh-C3vS-2GpyhCuI3FSywKZ6Gp743A2BF7T5vbym3dHzhKpySqR5puenbVk_D',
+			"profile" => "jw_app_dev",
+			"notification" => array(
+				'message' => 'Hello api test send all',
+			),
+	    );
+      
+		$content = json_encode($data);
+
+
+
+		$curl = curl_init();
+		$token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlYThmNjE5Yi0zNTljLTQ4MzgtYTdiMy1jOWQ3ZTYzNzE4NWYifQ.R5evZp6-cozGoVd6wcE-dOKHnSTjulLynkjwGCGo_fY";
+
+		curl_setopt_array($curl, array(
+		  CURLOPT_SSL_VERIFYPEER => false,
+		  CURLOPT_URL => "https://api.ionic.io/push/notifications",
+		  CURLOPT_RETURNTRANSFER => true,
+		  CURLOPT_ENCODING => "",
+		  CURLOPT_MAXREDIRS => 10,
+		  CURLOPT_TIMEOUT => 30,
+		  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		  CURLOPT_CUSTOMREQUEST => "POST",
+		  CURLOPT_POSTFIELDS => $content,
+		  CURLOPT_HTTPHEADER => array(
+		    "Authorization: Bearer $token",
+		    "Content-Type: application/json"
+		  ),
+		));
+
+		$response = curl_exec($curl);
+		$err = curl_error($curl);
+
+		curl_close($curl);
+
+		if ($err) {
+		  echo "cURL Error #:" . $err;
+		} else {
+		  $res = json_decode($response,true);
+		  print_r($res);
+		}
+
+	}
+
 	public function upload(){
 
 		header('Access-Control-Allow-Origin: *');
@@ -485,9 +533,15 @@ class Welcome extends CI_Controller {
 
 	public function toto(){
 
-		//$data = file_get_contents('./assets/toto.csv');
 
-		$csv = array_map('str_getcsv', file('./assets/toto.csv'));
+		//$data = file_get_contents('./assets/toto.csv');
+		$csv = array_map('str_getcsv', file('./assets/Toto663.txt'));
+		array_walk($csv, function(&$a) use ($csv) {
+      		$a = array_combine($csv[0], $a);
+    	});
+    	array_shift($csv); # remove column header
+
+    	//print_r($csv);exit;
 
 		$totalRow = count($csv)-1;
 
@@ -495,40 +549,43 @@ class Welcome extends CI_Controller {
 		$noTotalValue = array();
 		foreach($csv as $k => $v){
 
-			if($k != 0){
+			//if($k != 0){
 
-				$noAppear[] = $v['2'];
-				$noAppear[] = $v['3'];
-				$noAppear[] = $v['4'];
-				$noAppear[] = $v['5'];
-				$noAppear[] = $v['6'];
-				$noAppear[] = $v['7'];
+				$noAppear[] = $v['DrawnNo1'];
+				$noAppear[] = $v['DrawnNo2'];
+				$noAppear[] = $v['DrawnNo3'];
+				$noAppear[] = $v['DrawnNo4'];
+				$noAppear[] = $v['DrawnNo5'];
+				$noAppear[] = $v['DrawnNo6'];
 
 				//$noTotalValue[] = $v['9'];
 
-			}
+			//}
 
 		}
+
+		
 
 		//show no appear count
 		$noAppearCount = array_count_values($noAppear);
 		arsort($noAppearCount);
 
+		$maxApp = max($noAppearCount);
+		$minApp = min($noAppearCount);
+
+		$avgApp = ($maxApp+$minApp)/2; 
+
 		$top = array();
-		$middle = array();
 		$low = array();
 		$counter = 0;
 		foreach($noAppearCount as $k => $v){
 			$counter++;
 			switch($counter){
 
-				case ($counter <= 10):
+				case ($v >= $avgApp):
 					$top[] = $k;
 					break;
-				case ($counter > 10 && $counter <= 53):
-					$middle[] = $k;
-					break;
-				case ($counter > 53):
+				case ($v < $avgApp):
 					$low[] = $k;
 					break;
 			}
@@ -539,16 +596,14 @@ class Welcome extends CI_Controller {
 
 		$noList = array();
 
-
-		
 			$noListTotal = 0;
 			while(count($noList)<6){
 
 				$noListCount = count($noList);
 				switch ($noListCount) {
-					case ($noListCount < 2):
+					case ($noListCount <= 4):
 						
-						$tmpRand = rand(0,9);
+						$tmpRand = rand(0,count($top)-1);
 						$tmpNo = $top[$tmpRand];
 
 						if(!in_array($tmpNo, $noList)){
@@ -558,21 +613,9 @@ class Welcome extends CI_Controller {
 
 						break;
 					
-					case ($noListCount >= 2 && $noListCount <= 4):
-						
-						$tmpRand = rand(0,42);
-						$tmpNo = $middle[$tmpRand];
-
-						if(!in_array($tmpNo, $noList)){
-							$noList[] = $tmpNo;
-							$noListTotal += $tmpNo;
-						}
-
-
-						break;
 					case ($noListCount > 4):
 						
-						$tmpRand = rand(0,9);
+						$tmpRand = rand(0,count($low)-1);
 						$tmpNo = $low[$tmpRand];
 
 						if(!in_array($tmpNo, $noList)){
@@ -585,7 +628,7 @@ class Welcome extends CI_Controller {
 
 			}
 
-		if($noListTotal < 140 || $noListTotal > 250){
+		if($noListTotal < 160 || $noListTotal > 250){
 
 			echo'<script>location.reload();</script>';
 
@@ -593,7 +636,7 @@ class Welcome extends CI_Controller {
 
 		asort($noList);
 		foreach($noList as $k => $v){
-			echo 'No:'.$v.' appTime:'.$noAppearCount[$v].'<br>';
+			echo 'Draw No : '.$v.' Appear Count : '.$noAppearCount[$v].'<br>';
 		}
 		echo $noListTotal;
 		//print_r($noList);exit;

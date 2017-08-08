@@ -80,6 +80,8 @@ $route['^(en|zh|cn)/api/uploadCheck'] = "welcome/apiUploadCheck";
 $route['^(en|zh|cn)/api/saveToken'] = "welcome/saveToken";
 $route['^(en|zh|cn)/api/uploadImgs'] = "welcome/uploadImgs";
 
+$route['^(en|zh|cn)/apitest'] = "welcome/apitest";
+
 //upload handle
 $route['^(en|zh|cn)/vo/upload_handler'] = "vo_upload_handler"; 
 
